@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_height="700dp"
+    android:layout_width="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
@@ -11,16 +15,13 @@
     tools:context="com.example.stephanie.fueltankchart.MainActivity">
 
     <TextView
-        android:text="@string/tankHeight"
+        android:text="@string/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:id="@+id/tankHeight"
+        android:id="@+id/title"
         android:textSize="24sp"
-        android:layout_marginTop="20dp"
-        android:textIsSelectable="false"
-        android:layout_alignLeft="@+id/radioGroup1"
-        android:layout_alignStart="@+id/radioGroup1" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <RadioGroup
         android:id="@+id/radioGroup1"
@@ -28,7 +29,7 @@
         android:layout_marginTop="15dp"
         android:layout_height="50dp"
         android:orientation="horizontal"
-        android:layout_below="@+id/tankHeight"
+        android:layout_below="@+id/widthTxt"
         android:layout_alignLeft="@+id/tankSize"
         android:layout_alignStart="@+id/tankSize">
 
@@ -36,24 +37,35 @@
             android:text="96''"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/heightInches1"
-            android:layout_weight="0.34"
-            android:textSize="18sp" />
+            android:id="@+id/width1"
+            android:textSize="18sp"
+            android:layout_marginRight="100dp" />
 
         <RadioButton
             android:text="120''"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/heightInches2"
+            android:id="@+id/width2"
             android:textSize="18sp" />
     </RadioGroup>
+
+    <TextView
+        android:text="@string/tankSizeTxt"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tankSizeText"
+        android:layout_alignTop="@+id/radioGroup1"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_alignStart="@+id/radioGroup1"
+        android:layout_marginTop="60dp" />
 
     <Spinner
         android:layout_width="300dp"
         android:id="@+id/tankSize"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
-        android:text="@string/tankSize"
+        android:text="@string/tankSizeTxt"
         android:spinnerMode="dialog"
         android:layout_below="@+id/radioGroup1"
         android:layout_alignParentRight="true"
@@ -74,6 +86,17 @@
         android:layout_marginLeft="15dp" />
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tankDepthText"
+        android:textSize="24sp"
+        android:text="@string/tankDepthText"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tankSize"
+        android:layout_alignLeft="@+id/tankDepthValue"
+        android:layout_alignStart="@+id/tankDepthValue" />
+
     <SeekBar
        android:layout_width="50dp"
         android:layout_height="25dp"
@@ -91,58 +114,58 @@
         android:layout_marginLeft="10dp" />
 
     <TextView
+        android:text=""
+        android:layout_width="300dp"
+        android:id="@+id/total"
+        android:background="?attr/colorButtonNormal"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/totalText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_height="75dp"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="@string/widthTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tankDepthText"
+        android:id="@+id/widthTxt"
         android:textSize="24sp"
-        android:text="@string/tankDepthText"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/tankSize"
-        android:layout_alignLeft="@+id/tankDepthValue"
-        android:layout_alignStart="@+id/tankDepthValue" />
+        android:layout_marginTop="50dp"
+        android:textIsSelectable="false"
+        android:layout_below="@+id/title"
+        android:layout_alignLeft="@+id/radioGroup1"
+        android:layout_alignStart="@+id/radioGroup1" />
 
     <TextView
         android:text="@string/totalText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tankDepthValue"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
         android:id="@+id/totalText"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:layout_below="@+id/calculatebtn"
+        android:layout_alignLeft="@+id/tankDepth"
+        android:layout_alignStart="@+id/tankDepth"
+        android:layout_alignRight="@+id/radioGroup1"
+        android:layout_alignEnd="@+id/radioGroup1"
+        android:layout_marginTop="15dp" />
 
-    <TextView
-        android:text=""
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:id="@+id/total"
+    <Button
+        android:text="Calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/calculatebtn"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/totalText"
-        android:background="@android:color/darker_gray"
-        android:layout_alignLeft="@+id/title"
-        android:layout_alignStart="@+id/title"
-        android:layout_alignRight="@+id/tankDepth"
-        android:layout_alignEnd="@+id/tankDepth" />
-
-    <TextView
-        android:text="@string/tankSize"
-        android:textSize="24sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tankSizeText"
-        android:layout_alignTop="@+id/radioGroup1"
-        android:layout_alignLeft="@+id/radioGroup1"
-        android:layout_alignStart="@+id/radioGroup1"
-        android:layout_marginTop="50dp" />
-
-    <TextView
-        android:text="@string/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/title"
-        android:textSize="24sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
+        android:layout_below="@+id/tankDepthValue"
+        android:layout_alignLeft="@+id/totalText"
+        android:layout_alignStart="@+id/totalText"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:background="@android:color/holo_green_light" />
 
 </RelativeLayout>
+</ScrollView>
+

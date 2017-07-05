@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Fuel Tank Chart</string>
+    <string name="title">Generic Safe Fill Outage Chart</string>
+    <string name="widthTxt">Tank Diameter</string>
+    <string name="width1">96</string>
+    <string name="width2">120</string>
+    <string name="tankSizeTxt">Tank Capacity (Gal.)</string>
+    <string name="tankDepthText">Inches of Fuel in Tank</string>
+    <string name="totalText">Amount Of Gas To Full</string>
+    <string-array name="tankCapValues1">
+        <item name="value1">4000</item>
+        <item name="value2">6000</item>
+        <item name="value3">8000</item>
+        <item name="value4">10000</item>
+        <item name="value5">12000</item>
+    </string-array>
+    <string-array name="tankCapValues2">
+        <item name="value1">8000</item>
+        <item name="value2">10000</item>
+        <item name="value3">12000</item>
+        <item name="value4">15000</item>
+        <item name="value5">20000</item>
+    </string-array>
+    <string name="textSplash">Fuel Tank Chart App</string>
+</resources>
